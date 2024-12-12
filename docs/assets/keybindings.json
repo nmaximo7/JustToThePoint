@@ -1,0 +1,105 @@
+{
+    "Aliases and functions": [
+        "$modRR+Shift+h: Help",
+        "$mod+Shift+q: Forcefully kill a window (use with caution).",
+        "webserver: (Re)launch Hugo.",
+        "alias reload='source ~/.zshrc'",
+        "convert ~/Downloads/file.jpeg maths: convierte/inserta/da el codigo para Hugo",
+        "mysearch: rg + google",
+        "gitpush: send to git and ask for the message for the commit",
+        "start: myMain.py Python entry point."
+    ],
+    "Essentials": [
+        "$mod+Shift+t: conkytoggle.sh",
+        "$mod+Enter: Open a new terminal.",
+        "$mod+b: pavucontrol (sound)",
+        "$mod+d: Rofi.",
+        "$mod+Shift+t : conkytoggle.sh",
+        "$mod+F1: Gmail",
+        "$mod+F2: Firefox",
+        "$mod+F3: Obsidian knowledge",
+        "$mod+F4: Edit i3 configuration.",
+        "$mod+F5: PCManFM.",
+        "$mod+F6: KeePassXC.",
+        "$mod+F7: Launch http://localhost:1313/maths/bignaughtylist/ in Chrome.",
+        "$mod+F8: Gimp",
+        "$mod+F9: Bankinter",
+        "$mod+p: Take a screenshot (requires scrot).",
+        "mod+Shift+e: Shutdown.",
+        "$mod+r: mode \"resize\""
+    ],
+    "Basic Navigation": [
+        "$mod+j: Focus left.",
+        "$mod+k: Focus down.",
+        "$mod+l: Focus up.",
+        "$mod+;: Focus right."
+    ],
+    "Window Management": [
+        "$mod+Shift+q: Close the focused window.",
+        "$mod+f: Toggle fullscreen mode for the focused window.",
+        "$mod+Shift+space: Toggle floating mode for the focused window.",
+        "$mod+h: Split horizontally.",
+        "$mod+v: Split vertically.",
+        "$mod+s: Stacking layout.",
+        "$mod+w: Tabbed layout.",
+        "$mod+e: Toggle between split and tabbed/stacking layout.",
+        "$mod+r: Enter resize mode (use j, k, l, ; to resize)."
+    ],
+    "Workspace Management": [
+        "$mod+number: Switch to workspace number.",
+        "$mod+Shift+number: Move the focused window to workspace number.",
+        "$mod+Shift+Left/Right: Move the focused window to the adjacent workspace.",
+        "$mod+Ctrl+Left/Right: Move to the next or previous workspace."
+    ],
+    "System": [
+        "$mod+Shift+e: Exit i3 (logout).",
+        "$mod+Shift+r: Reload i3 configuration file.",
+        "$mod+Shift+c: Restart i3 in-place."
+    ],
+    "Pacman Cheatsheet": [
+        "sudo pacman -Syu: Update and upgrade all packages.",
+        "sudo pacman -S package_name: Install a package.",
+        "sudo pacman -Rs package_name: Remove a package and its dependencies not required by any other installed package.",
+        "sudo pacman -Ss keyword: Search for packages.",
+        "sudo pacman -Qi package_name: Display information about an installed package."
+    ],
+    "Errors Pacman": [
+        "pacman -Sy archlinux-keyring --noconfirm : Ensure that the system's keyring is up-to-date",
+        "sudo reflector --verbose --country 'Spain' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist : Update Mirrors"
+    ],
+    "Yay Cheatsheet": [
+        "yay: Upgrade all packages (AUR and repository).",
+        "yay -S package_name: Install a package from the AUR or repositories.",
+        "yay -Rs package_name: Remove a package and its dependencies.",
+        "yay -Ss keyword: Search for packages in the AUR and repositories.",
+        "yay -Qi package_name: Display information about an installed package.",
+        "yay -Yc: Clean unneeded dependencies.",
+        "yay -Ps: Show system statistics."
+    ],
+    "AUR": [
+        "git clone https://aur.archlinux.org/my_new_package.git",
+        "cd my_new_package # And we move to its directory.",
+        "makepkg -si",
+        "cd ..",
+        "rm -rf my_new_package"
+    ],
+    "Pass Cheatsheet": [
+        "pass insert site/username: Insert a new password.",
+        "pass generate site/username [length]: Generate a new password of specified length.",
+        "pass ls: List all passwords.",
+        "pass site/pass otp site: Show the password for a site.",
+        "pass rm site/username: Remove a password entry.",
+        "pass edit site/username: Edit a password entry.",
+        "pass find keyword: Find passwords" 
+    ],
+    "Various": [
+        "source ./venv/bin/activate : activate an environment",
+        "python greeting.py : launch a Python file",
+        "Manage my dotfiles: cd ~dotfiles",
+        "git add . # Stage all changes in the working directory for the next commit.",
+        "git commit -am \"Fresh start",
+        "git push",
+        "Useful Linux orders: du -hc ./example1 or du -hc: Show Only total Disk Usage of a Directory in n human-readable format."
+    ]   
+}
+

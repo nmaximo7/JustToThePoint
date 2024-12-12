@@ -1,0 +1,54 @@
+* {
+  border: none;
+  font-family: 'Fira Code', 'Symbols Nerd Font', 'Symbols Nerd Font Mono';
+  font-size: 13px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 25px; /* Reduced from 35px */
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#custom-arch, #workspaces, #quicklaunch, #custom-weather {
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #b4befe;
+  margin-top: 5px; /* Reduced from 7px */
+  margin-right: 10px; /* Reduced from 15px */
+  padding-top: 1px;
+  padding-left: 8px; /* Reduced from 10px */
+  padding-right: 8px; /* Reduced from 10px */
+}
+
+#custom-arch, #custom-firefox, #custom-vscode, #custom-alacritty, #custom-pcmanfm {
+  font-size: 18px; /* Reduced from 20px */
+  margin-left: 10px; /* Reduced from 15px */
+  color: #b4befe;
+}
+
+#workspaces button {
+  background: #11111b;
+  color: #b4befe;
+}
+
+#clock, #keyboard-state, #custom-power, #cpu, #memory, #backlight, #pulseaudio, #network {
+  border-radius: 5px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-top: 5px; /* Reduced from 7px */
+  padding-left: 3px; /* Reduced from 5px */
+  padding-right: 3px; /* Reduced from 5px */
+  margin-right: 3px; /* Reduced from 5px */
+}
+
+#pulseaudio, #network {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 3px; /* Reduced from 5px */
+}
+
+#clock {
+  margin-right: 5px;
+}
+

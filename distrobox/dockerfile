@@ -1,0 +1,70 @@
+# cd dotfiles/distrobox
+# docker build -t custom-arch .
+# distrobox rm arch -f
+# distrobox create --image custom-arch --name arch --home /home/arch-distro --volume /etc/static/profiles/per-user:/etc/profiles/per-user:ro --verbose
+# distrobox enter arch
+
+# Use the official Arch Linux image as the base image
+FROM archlinux:latest
+
+# Initialize keyring and update Package Repository
+RUN pacman-key --init && \
+    pacman-key --populate archlinux && \
+    pacman -Syu --noconfirm
+
+# Force a refresh of all package databases:
+RUN pacman -Syy
+
+# Use reflector to automatically select fast mirrors:
+RUN pacman -S reflector --noconfirm && \
+    reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+# Install base packages
+RUN pacman -S --noconfirm base-devel git neovim zsh
+
+# Install additional tools
+RUN pacman -S --noconfirm zellij exa zoxide fd bat ripgrep stow
+
+# Install system utilities
+RUN pacman -S --noconfirm fzf wl-clipboard lazygit kubectl jq rsync man-db unzip plocate glibc sudo wget curl
+
+# Install additional text editors and utilities
+RUN pacman -S --noconfirm fastfetch tree xclip vim htop cmatrix starship figlet fortune-mod
+
+# Install glibc and glibc-locales to support locale generation
+RUN pacman -S --noconfirm glibc glibc-locales
+
+# Set up the locale, i.e., the language, numbering, date, and currency formats for your system.
+RUN sed --in-place=.bak 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+
+RUN locale-gen
+# The /etc/locale.conf file defines system-wide locale settings.
+RUN echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+# Set up the keyboard layout: loadkeys es
+RUN echo "KEYMAP=es" >> /etc/vconsole.conf
+
+RUN echo "nmaximo7 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Create a non-root user
+RUN useradd -m -G wheel builduser && \
+    echo "builduser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+RUN pacman -S --noconfirm alsa-lib gtk3 libcups libxss libxtst nss ttf-liberation xdg-utils geany
+
+# Switch to the non-root user
+USER builduser
+WORKDIR /home/builduser
+
+RUN git clone https://aur.archlinux.org/yay-git.git && \
+    cd yay-git && \
+    makepkg -si --noconfirm
+    
+RUN yay -S google-chrome --noconfirm
+RUN yay -S ferdium-bin --noconfirm
+USER root
+
+# Set Environment Variables 
+ENV LANG=es_ES.UTF-8
+ENV LANGUAGE=es_ES:es
+ENV LC_ALL=es_ES.UTF-8

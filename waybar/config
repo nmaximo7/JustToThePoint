@@ -1,0 +1,103 @@
+{
+  "layer": "top",
+  "modules-left": ["custom/arch", "hyprland/workspaces", "group/quicklaunch"],
+  "modules-center": ["clock", "keyboard-state", "custom/weather"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "network", "custom/power"],
+
+  "custom/arch": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "rofi -show run"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "tooltip": false,
+    "all-outputs": true,
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "group/quicklaunch": {
+  "orientation": "horizontal",
+  "modules": [
+    "custom/firefox",
+    "custom/vscode",
+    "custom/alacritty",
+    "custom/pcmanfm"]},
+  "custom/firefox": {
+    "format": "",
+    "on-click": "firefox"
+  },
+  "custom/vscode": {
+  "format": "",
+  "on-click": "code"
+  },
+  "custom/alacritty": {
+  "format": "",
+  "on-click": "alacritty"
+  },
+  "custom/pcmanfm": {
+  "format": "",
+  "on-click": "pcmanfm"
+  },
+  "clock": {
+  "format": "<span color='#b4befe'> </span>{:%H:%M}",
+  "format-alt": "{:%d·%m·%y}",
+  "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+  "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon} ",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": ""
+        },
+   },
+  "pulseaudio": {
+    "format": "<span color='#b4befe'>{icon}</span> {volume}%",
+    "format-muted": "",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%"
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": " {used:0.1f}GiB/{total:0.1f}GiB ({percentage}%)"
+  },
+
+  "network": {
+    "interface": "enp5s0",
+    "format": "{ifname}",
+    "format-wifi": "<span color='#b4befe'> </span>{essid}",
+    "format-ethernet": "<span color='#b4befe'> </span>{ipaddr}/{cidr} ",
+    "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu"
+  },
+  "custom/weather": {
+        "format": "{}",
+	"exec": "curl 'wttr.in/Málaga?format=1'",
+	"interval": 1800,
+	"on-click": "firefox 'https://www.meteoblue.com/en/weather/week/m%c3%a1laga_spain_2514256'"
+   }
+}
+
