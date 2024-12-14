@@ -6,7 +6,7 @@
 #(_)\_)(__)(_/\_)\__/ (___/   \__/ (_)  (___/(_)(_)(__) (___)  
 
 # Setting Variables
-cowsay "Deploy Hugo"
+cowsay "Backup & Update"
 echo "Backup"
 USER=nmaximo7
 BACKUP_DEST="/run/media/${USER}/mydisk2"
@@ -47,7 +47,6 @@ if ! distrobox-upgrade --all; then
 fi
 
 # Update the system. Rebuilds and activates the system configuration with the latest packages, making it a convenient way to keep your system up-to-date.
-sudo nixos-rebuild switch --upgrade  
 if ! sudo nixos-rebuild switch --upgrade; then
     echo "Failed to upgrade the system configuration."
     exit 1
