@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# Ultimate configuration file
 # _  _  __  _  _  __   ___    _  _  ___  ___   __  ____  ___   
 #( \( )(  )( \/ )/  \ / __)  ( )( )(  ,\(   \ (  )(_  _)(  _)  
 # )  (  )(  )  (( () )\__ \   )()(  ) _/ ) ) )/__\  )(   ) _)  
@@ -26,9 +26,12 @@ if ! distrobox-upgrade --all; then
     echo "Failed to upgrade Distrobox containers."
 fi
 
-
-# Update the system
-sudo nixos-rebuild switch --upgrade # Rebuilds and activates the system configuration with the latest packages, making it a convenient way to keep your system up-to-date.
+# Update the system. Rebuilds and activates the system configuration with the latest packages, making it a convenient way to keep your system up-to-date.
+sudo nixos-rebuild switch --upgrade  
+if ! sudo nixos-rebuild switch --upgrade; then
+    echo "Failed to upgrade the system configuration."
+    exit 1
+fi
 
 
 # Version Control: Keep your configuration files under version control to track changes and facilitate rollbacks.
@@ -38,5 +41,5 @@ git commit -m "Update NixOS configuration"
 git push
 
 # Monitor disk use
-nix-store --gc --print-dead
-df -h /nix/store
+# nix-store --gc --print-dead
+# df -h /nix/store
