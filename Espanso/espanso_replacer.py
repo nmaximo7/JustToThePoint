@@ -58,7 +58,7 @@ def load_triggers(json_file):
         return {}
 
 def main():
-    json_file = '../Espanso/myespanso.json'  # Ensure this path is correct
+    json_file = 'myespanso.json'  # Ensure this path is correct
     triggers = load_triggers(json_file)
 
     if not triggers:
