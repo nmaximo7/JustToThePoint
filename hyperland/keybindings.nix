@@ -9,10 +9,11 @@ bind = ${modifier},Return,exec,${terminal}
 bind = ${modifier},F1,exec,alacritty
 bind = ${modifier},F2,exec,browser
 bind = ${modifier},F3,exec,google-chrome
-
+bind = ${modifier},M,exit
 bind = ${modifier},E,exec,sh ${scriptsDir}/empezar.sh
-bind = ${modifier},D,exec,rofi -show run
-bind = ${modifier}+SHIFT,D,exec,rofi -show power-menu -modi power-menu:rofi-power-menu
+bind = ${modifier},D,exec,rofi -combi-modi window,drun,ssh ,emoji -font "hack 10" -show combi -show-icons
+bind = ${modifier},V,togglefloating
+bind = ${modifier}+SHIFT,D,exec,rofi -show power-menu --choices=shutdown/reboot/logout/lockscreen --confirm=logout/lockscreen
 bind = ${modifier},Q,killactive
 bind = ${modifier}+CTRL,Q,exec,hyprctl dispatch exit
 bind = ${modifier},G,togglespecialworkspace,geany

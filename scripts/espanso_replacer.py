@@ -2,6 +2,7 @@ import json
 import pyperclip
 import datetime
 import subprocess
+from difflib import get_close_matches
 
 def process_replacement(user_input, replacement):
     """
@@ -70,8 +71,14 @@ def main():
     try:
         while True:
             user_input = input("Enter trigger: ").strip()
-            if user_input in triggers:
-                replacement = triggers[user_input]
+            trigger_keys = triggers.keys()
+
+            # Get the closest match with a certain similarity threshold (cutoff)
+            closest_matches = get_close_matches(user_input, trigger_keys, n=1, cutoff=0.6)
+
+            if closest_matches:
+                closest_trigger = closest_matches[0]
+                replacement = triggers[closest_trigger]
                 print(f"{replacement}")
                 already_process_replacement =  process_replacement(user_input, replacement)
                 print(f"Replacement: {already_process_replacement}\n")
