@@ -46,7 +46,7 @@ in
       exec-once = nm-applet --indicator
       exec-once = sleep 1 && waybar
       exec-once = sleep 1 && mako
-      exec-once = [workspace 1 silent] alacritty -e sh -c 'cowsay "Welcome master! Type inicio"; exec $SHELL'    
+      #exec-once = [workspace 1 silent] alacritty -e sh -c 'cowsay "Welcome master! Type inicio"; exec $SHELL'    
       
       ${import /home/${username}/dotfiles/hyperland/windowrules.nix {}}   
       

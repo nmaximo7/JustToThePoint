@@ -11,20 +11,6 @@ echo "Backup"
 USER=nmaximo7
 BACKUP_DEST="/run/media/${USER}/mydisk2"
 
-# Back up directories
-echo "Back up directories to $BACKUP_DEST..."
-rsync -av --exclude 'cleanDestinationDir' --exclude 'disableFastRender' --delete "$HOME/justtothepoint/" "$BACKUP_DEST/justtothepoint"
-rsync -av --delete "$HOME/dotfiles/" "$BACKUP_DEST/dotfiles"
-rsync -av --delete "$HOME/Dropbox/" "$BACKUP_DEST/Dropbox"
-rsync -av --delete "$HOME/wallpapers/" "$BACKUP_DEST/wallpapers"
-rsync -av --exclude '__pycache__/' --exclude '.venv/' --delete "$HOME/myNewPython/" "$BACKUP_DEST/myNewPython"
-rsync -av --delete /etc/nixos/ "$BACKUP_DEST/nixos_config"
-
-# Launch a backup script
-if ! sh /home/nmaximo7/dotfiles/backup/backup_nixos.sh; then
-    echo "Failed to execute the backup script."
-fi
-
 # This fetches the latest package lists from subscribed channels.
 if ! nix-channel --update; then
     echo "Failed to update Nix channels."

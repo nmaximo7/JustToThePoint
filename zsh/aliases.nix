@@ -24,6 +24,13 @@
       myespanso = "cd /home/nmaximo7/dotfiles/Espanso && nix-shell";
       inicio = "cd /home/nmaximo7/dotfiles/scripts && sh ./inicio.sh";
       help = "cd /home/nmaximo7/dotfiles/scripts && sh ./help.sh";
-      maintaince = "cd /home/nmaximo7/dotfiles/scripts && sh ./maintaince.sh";
- 
+      prompt1 = "echo 'Could you please clarify, proofread, explain and expand the explanation as more as possible (context Calculus I-V) to make it more comprehensive and accessible. Please be precise, verbose, avoid hallucinations and do not worry about time, but precision. Thank you very much for your aid and support, I do appreciate it. If I make a mistake (grammar, spelling or in the logic), please tell me the mistake, mark it in red and the solution'";
+      prompt2 = "echo 'Create a drawing in a 16:9 aspect ratio with a girl studying maths from a book in her bedroom in anime style'";
+      quote = "awk -v RS='%' 'NR > 1 {a[NR-1] = $0} END {srand(); print a[int(rand()*length(a))+1]}' /home/nmaximo7/dotfiles/docs/assets/fortunes | sed '/^$/d'
+";
+      backup = "sh /home/nmaximo7/dotfiles/scripts/mybackup.sh";
+      maintaince = "sh /home/nmaximo7/dotfiles/scripts/maintaince.sh";
+      deploy = "sh /home/nmaximo7/dotfiles/scripts/deploy.sh";
+      check = "sh /home/nmaximo7/dotfiles/scripts/check.sh";
+      
 }

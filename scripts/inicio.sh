@@ -2,7 +2,7 @@
 
 # Exit immediately if a command exits with a non-zero status
 # set -e
-
+(cat /home/nmaximo7/dotfiles/docs/assets/calendar.txt; echo; cat /home/nmaximo7/dotfiles/docs/assets/brain.md; echo; cat /home/nmaximo7/dotfiles/scripts/help.sh) > /home/nmaximo7/dotfiles/docs/main.md
 # Initialize swww and set wallpaper
 swww init
 sleep 1

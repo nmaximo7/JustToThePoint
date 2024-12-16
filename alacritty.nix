@@ -4,8 +4,12 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      scrolling = {
+        history = 1000;
+      };
       window = {
         dynamic_title = true;
+        opacity = 0.9;
         padding = {
           x = 20;
           y = 20;
@@ -62,10 +66,15 @@
           white =   "0xffffff";
         };
       };
-      keyboard.bindings = [
+      selection = { 
+      		semantic_escape_chars = ",?`|:\"' ()[]{}<>"; 
+      		save_to_clipboard = true; 
+      };  	
+       keyboard.bindings = [ 
+        { key = "C"; mods = "Control"; action = "Copy"; } 
         { key = "V"; mods = "Control"; action = "Paste"; }
-        { key = "C"; mods = "Control"; action = "Copy"; }
-        { key = "Q"; mods = "Control"; action = "Quit"; }  # Bind Ctrl+Q to Quit
+        { key = "Q"; mods = "Control"; action = "Quit"; } 
+        { key = "N"; mods = "Control"; action = "SpawnNewInstance"; }
       ];
     };
   };
