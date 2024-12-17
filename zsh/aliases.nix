@@ -29,8 +29,10 @@
       quote = "awk -v RS='%' 'NR > 1 {a[NR-1] = $0} END {srand(); print a[int(rand()*length(a))+1]}' /home/nmaximo7/dotfiles/docs/assets/fortunes | sed '/^$/d'
 ";
       backup = "sh /home/nmaximo7/dotfiles/scripts/mybackup.sh";
-      maintaince = "sh /home/nmaximo7/dotfiles/scripts/maintaince.sh";
+      maintaining = "sh /home/nmaximo7/dotfiles/scripts/maintaince.sh";
       deploy = "sh /home/nmaximo7/dotfiles/scripts/deploy.sh";
       check = "sh /home/nmaximo7/dotfiles/scripts/check.sh";
-      
+      nixedit="sudo nvim /etc/nixos/configuration.nix";
+      homeedit = "gedit /home/nmaximo7/dotfiles/home-manager.nix";
+      hyperedit = "gedit /home/nmaximo7/dotfiles/hyperland/hyperland.nix";
 }

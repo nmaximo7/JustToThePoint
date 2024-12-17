@@ -25,13 +25,6 @@
       " Enable syntax highlighting
       syntax on
 
-      " Plugins settings (using vim-plug as an example)
-      call plug#begin('~/.local/share/nvim/plugged')
-      Plug 'preservim/nerdtree'  " File explorer
-      Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy finder
-      Plug 'morhetz/gruvbox'  " Color scheme
-      call plug#end()
-
       " Set colorscheme
       colorscheme gruvbox  " Set the colorscheme to gruvbox
 
@@ -44,6 +37,9 @@
     plugins = with pkgs.vimPlugins; [
       # Add any additional plugins here
       vim-sensible  # A sensible default configuration
+      nerdtree
+      fzf-vim
+      gruvbox
     ];
   };
 }

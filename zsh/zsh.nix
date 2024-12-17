@@ -38,6 +38,9 @@ in
         rg "$@" ~/dotfiles/
       	rg "$@" ~/myNewPython/
       }
+      browse() {
+      	sh /home/nmaximo7/dotfiles/scripts/browse.sh "$@"
+      }
       cat() {
       	distrobox enter arch -- cat "$@"
       }
@@ -48,7 +51,7 @@ in
     	echo -e "---\nkeywords: Maths, Learn Math, math, mathematics, school, homework, education, Natural numbers, numbers, Integers, Fractions, Complex numbers\nfeatured_image: /maths/images/DifferentialEquationsFishing.jpg\ndescription: Predator-Prey Model.\nauthor: Máximo Núñez Alarcón\nlanguage: en\nweight: 401\nmath: true\ntitle:\nfirstarticle: Complex Analysis\ndate: $(date +"%Y-%m-%d")\ncategories:\n  - \"maths\" \n  - \"Calculus\" \n  - \"Complex Analysis\" \n---"
       }
       special() {
-      	 echo -e "Operators and Relations: ≈ ≡ ≋ ≆ ≠ ≉  ∼ ⋄ ∴ ⊥ ∎\nSet Theory: ∈ ∉ ∅ ⊆ ⊇ ≼ \nNumber Sets: ℕ ℤ ℚ ℝ ℂ\nQuantifiers: ∀ ∃ \nDifferential Operators: ∂ Δ ∇ \nPunctuation and Brackets: {  } ( ) " " ' ' „ ‟ « » — 〈 〉 〔 〕 ﹙ ﹚ ﹛ ﹜\nOther:  @  \  |\nGreek Alphabets: α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω\nOperators: + - ± / × \narrows: ← → ↑ ↓ ↔ ↕ ↖ ↗ ↘ ↙ ⇐ ⇒ ⇑ ⇓ ⇔ ⇕ ⟵ ⟶ ⟷ ⟹ ⬅ ➞ ➟  ➠ ➡ ➢\nspecial characters: ✡ ★ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿\nsuperindices: ᵃ ᵇ ᶜ ᵈ ᵉ ᵊ ᵋ ᵛ ᵥ ᵦ ᵧ ᵨ ᵩ ᵪ ᵫ ᵬ ᵭ ᵮ ᵯ ᵰ ᵱ ᵲ ᵳ ᵴ ᵵ ᵶ\nSub-indexes: ₐ ₑ ₒ ₓ ₔ ₕ ₖ ₗ ₘ ₙ ₚ ₛ ₜ\nFractions: ½ ⅓ ¼ ⅕ ⅙ ⅐ ⅔ ¾ ⅖ ⅗ ⅘ ⅚ ⅛ ⅜ ⅝ ⅞\nMathematical Symbols: ∞ ± ÷ ∙ × ∆ √ ∫ ∏ ∑ ∂ ∃ ∄ ∈ ∉ ∊ ∋ ∌ ∍\nCurrency Symbols: € $ ¢ £ ¥ ₤ ₳ ₱ ₲ ₴ ₵ ₶ ₷ ₸ ₹\nGeometric Shapes: ● ○ ◐ ◑ ◒ ◓ ◔ ◕ ◖ ◗ ◘ ◙ ◚ ◛ ◜ ◝ ◞ ◟\nMiscellaneous Symbols: ☀ ☁ ☂ ☃ ♠ ♣ ♥ ♦ ♪ ♫ ☎ ✆ ✈ ☢ ☣ ♿ ☮ ✌ ☯ ☸ ⚘"
+      	 echo -e "Operators and Relations:  + - ± / × > < = ≤ ≥ ≈ ≡ ≋ ≆ ≠ ≉  ∼ ⋄ ∴ ⊥ ∎\nSet Theory: ∈ ∉ ∅ ⊆ ⊇ ≼ \nNumber Sets: ℕ ℤ ℚ ℝ ℂ\nQuantifiers: ∀ ∃ \nDifferential Operators: ∂ Δ ∇ \nPunctuation and Brackets: {  } ( ) " " ' ' „ ‟ « » — 〈 〉 〔 〕 ﹙ ﹚ ﹛ ﹜\nOther:  @  \  |\nGreek Alphabets: α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω\narrows: ← → ↑ ↓ ↔ ↕ ↖ ↗ ↘ ↙ ⇐ ⇒ ⇑ ⇓ ⇔ ⇕ ⟵ ⟶ ⟷ ⟹ ⬅ ➞ ➟  ➠ ➡ ➢\nspecial characters: ✡ ★ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿\nsuperindices: ᵃ ᵇ ᶜ ᵈ ᵉ ᵊ ᵋ ᵛ ᵥ ᵦ ᵧ ᵨ ᵩ ᵪ ᵫ ᵬ ᵭ ᵮ ᵯ ᵰ ᵱ ᵲ ᵳ ᵴ ᵵ ᵶ\nSub-indexes: ₐ ₑ ₒ ₓ ₔ ₕ ₖ ₗ ₘ ₙ ₚ ₛ ₜ\nFractions: ½ ⅓ ¼ ⅕ ⅙ ⅐ ⅔ ¾ ⅖ ⅗ ⅘ ⅚ ⅛ ⅜ ⅝ ⅞\nMathematical Symbols: ∞ ± ÷ ∙ × ∆ √ ∫ ∏ ∑ ∂ ∃ ∄ ∈ ∉ ∊ ∋ ∌ ∍\nCurrency Symbols: € $ ¢ £ ¥ ₤ ₳ ₱ ₲ ₴ ₵ ₶ ₷ ₸ ₹\nGeometric Shapes: ● ○ ◐ ◑ ◒ ◓ ◔ ◕ ◖ ◗ ◘ ◙ ◚ ◛ ◜ ◝ ◞ ◟\nMiscellaneous Symbols: ☀ ☁ ☂ ☃ ♠ ♣ ♥ ♦ ♪ ♫ ☎ ✆ ✈ ☢ ☣ ♿ ☮ ✌ ☯ ☸ ⚘"
       }	 
       eval "$(zoxide init zsh --cmd cd)"
       # fastfetch

@@ -6,8 +6,8 @@ in
 {
   # Environment variables
   home.sessionVariables = {
-    EDITOR = "vim";
-    VISUAL = "vim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     LANG = "en_US.UTF-8";
     BROWSER = "firefox";   # Set default browser to Firefox
   };

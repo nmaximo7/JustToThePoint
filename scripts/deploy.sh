@@ -25,6 +25,7 @@ pkill hugo
 rm -rf ./public 
 # It forces deletion without prompting. It removes the existing public directory, ensuring a clean slate before building.
 
+cd /home/nmaximo7/justtothepoint/
 hugo --gc --cleanDestinationDir --baseURL "https://justtothepoint.com/"
 # Using --gc (Garbage Collection) is a good practice. It cleans up unused cache files and other artifacts, ensuring that the final output is as clean as possible.
 # The --cleanDestinationDir option cleans the public directory before building. It prevents outdated files from lingering and causing conflicts.
